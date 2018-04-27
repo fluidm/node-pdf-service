@@ -24,10 +24,10 @@ app.get('/', function (req, res) {
 });
 
 // route: post: /process_url
-app.post('/process_url', function (req, res) {
+app.get('/process_url', function (req, res) {
 
   // get url to process
-  var url_to_process = req.body.url;
+  var url_to_process = req.query.url;
   if (url_to_process === undefined || url_to_process == '') {
     res.writeHead(404, {'Content-Type': 'text/plain'});
     res.end("404 Not Found");
